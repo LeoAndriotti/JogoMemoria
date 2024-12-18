@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+
+<body>
+    
+    <header class="header">
+      <img src="assets/img/pokedexlogo.png.png" alt="" width="200px" height="200px">
+      <div class="charizard">
+        <img src="assets/img/charizardgif.gif" alt=""width="250px" height="250px" style="margin-left: 57%; margin-top: -500px;">
+      </div>
+        <div id="rankingFixo" class="ranking-fixo">
+            <h3>Top 5 Jogadores</h3>
+            <ul id="listaRankingFixo"></ul>
+        </div>
+    </header>
+  
+    <div id="pokemonModal" class="modal">
+        <div class="modal-content">
+            <h2 style=" display: flex; justify-content: center;">
+                <img src="assets/img/Bem-Vindo-Poked-x-12-12-2024 (1).png" width="500px" height="90px">
+                <div class="loader" style="margin-top: 3%;"></div>  
+            </h2>
+            
+            <form id="configJogo" style="margin-top: 10%; margin-left: 5%;">
+                <img src="assets/img/Seu-Nome-12-12-2024.png" width="150px" height="50px">
+                <input type="text" id="nomeJogador" name="nomeJogador" placeholder="Digite seu nome..." required>
+
+                <img src="assets/img/Escolha-a-Dificuldade-12-12-2024.png" width="250px" height="80px">
+                <select id="dificuldade" name="dificuldade" required>
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Médio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+                
+                <button type="button" id="iniciarJogo">Continuar</button>    
+         
+            </form>
+        </div>
+    </div>
+    <div class="score-container">
+        <p id="pontuacao">Pontuação: 0</p>
+    </div>
+    
+    <div class="timer-container">
+        <p id="timer">00:00</p>
+    </div>
+    <div id="fimDeJogo" class="fim-de-jogo-container" style="display: none;">
+        <h2 id="mensagemFimDeJogo"></h2>
+        <button id="jogarNovamente">Jogar Novamente</button>
+    </div>
+  <div class="pikachu-correndo">
+    <img src="assets/img/4tym.gif" alt="Pikachu Correndo" class="pikachu">
+  </div>
+    <main class="pokedex">
+        <div class="pokemon-card">
+            <img src="assets/img/bulbasaur.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/ivysaur.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/venusaur.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/charmander.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/charmeleon.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/charizard.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/squirtle.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/wartodle.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/blastoise.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/caterpie.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/metapod.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/buterfree.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/pikachu.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/vulpix.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/psyduck.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/alakazam.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/ponyta.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/doduo.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/shellder.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/gengar.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/bulbasaur.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/ivysaur.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/venusaur.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/charmander.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/charmeleon.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/charizard.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/squirtle.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/wartodle.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/blastoise.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/caterpie.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/metapod.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/buterfree.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/pikachu.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/vulpix.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/psyduck.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/alakazam.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/ponyta.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/doduo.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/shellder.png">
+        </div>
+        <div class="pokemon-card">
+            <img src="assets/img/gengar.png">
+        </div>
+
+    </main>
+    <footer>
+        <p class="copyright">Leonardo Andriotti, Leonardo Souza e Wesley Lima</p>
+    </footer>
+</body>
+<script>
+    let contagemRegressiva = 60;
+    let totalDePares = 10;
+    let pontuacao = 0;
+    let cartasViradas = [];
+    let intervalo;
+    let pontuadores = []; 
+
+    function salvarRanking() {
+        localStorage.setItem("ranking", JSON.stringify(pontuadores));
+    }
+
+    function carregarRanking() {
+        const rankingSalvo = localStorage.getItem("ranking");
+        if (rankingSalvo) {
+            pontuadores = JSON.parse(rankingSalvo);
+        }
+    }
+
+    function atualizarRankingFixo() {
+        const listaRankingFixo = document.getElementById("listaRankingFixo");
+        listaRankingFixo.innerHTML = "";
+
+        let rankingOrdenado = pontuadores.sort((a, b) => b.pontos - a.pontos);
+
+        rankingOrdenado.slice(0, 5).forEach((jogador, index) => {
+            const li = document.createElement("li");
+            li.textContent = `${index + 1}. ${jogador.nome}: ${jogador.pontos} pontos`;
+            listaRankingFixo.appendChild(li);
+        });
+    }
+
+    function finalizarJogo(vitoria) {
+        const containerFimDeJogo = document.getElementById("fimDeJogo");
+        const mensagemFimDeJogo = document.getElementById("mensagemFimDeJogo");
+        const nomeJogador = document.getElementById("nomeJogador").value.trim();
+        const dificuldade = document.getElementById("dificuldade").value;
+
+        if (vitoria) {
+            mensagemFimDeJogo.textContent = `Parabéns! Você venceu com ${pontuacao} pontos!`;
+        } else {
+            mensagemFimDeJogo.textContent = `Tempo Esgotado! Sua pontuação foi: ${pontuacao}`;
+        }
+
+        if (nomeJogador) {
+            pontuadores.push({
+                nome: nomeJogador,
+                pontos: pontuacao,
+                dificuldade: dificuldade,
+            });
+            salvarRanking(); 
+        }
+
+        atualizarRankingFixo();
+        containerFimDeJogo.style.display = "flex";
+    }
+
+    function formatarTempo(segundos) {
+        const minutos = Math.floor(segundos / 60).toString().padStart(2, '0');
+        const segundosRestantes = (segundos % 60).toString().padStart(2, '0');
+        return `${minutos}:${segundosRestantes}`;
+    }
+
+    function iniciarContagemRegressiva() {
+        const elementoTempo = document.getElementById("timer");
+
+        intervalo = setInterval(() => {
+            contagemRegressiva--;
+            elementoTempo.textContent = formatarTempo(contagemRegressiva);
+
+            if (contagemRegressiva <= 0) {
+                clearInterval(intervalo);
+                elementoTempo.textContent = "Tempo Esgotado";
+                finalizarJogo(false);
+            }
+        }, 1000);
+    }
+
+    function configurarJogo() {
+        const nomeJogador = document.getElementById("nomeJogador").value.trim();
+        const dificuldade = document.getElementById("dificuldade").value;
+        
+
+        if (!nomeJogador) {
+            alert("Por favor, insira seu nome!");
+            return;
+        }
+
+        switch (dificuldade) {
+            case "facil":
+                totalDePares = 10;
+                contagemRegressiva = 45;
+                break;
+            case "medio":
+                totalDePares = 15;
+                contagemRegressiva = 60;
+                break;
+            case "dificil":
+                totalDePares = 20;
+                contagemRegressiva = 90;
+                break;
+        }
+
+        pontuacao = 0;
+        atualizarPontuacao();
+
+        document.getElementById("pokemonModal").style.display = "none";
+
+        iniciarContagemRegressiva();
+        configurarPokedex(totalDePares);
+    }
+
+    function configurarPokedex(pares) {
+        const pokedex = document.querySelector(".pokedex");
+
+        const imagensPokemon = [
+            "bulbasaur.png", "ivysaur.png", "venusaur.png", "charmander.png",
+            "charmeleon.png", "charizard.png", "squirtle.png", "wartodle.png",
+            "blastoise.png", "caterpie.png", "metapod.jpg", "buterfree.png",
+            "pikachu.png", "vulpix.png", "psyduck.png", "alakazam.png",
+            "ponyta.png", "doduo.png", "shellder.png", "gengar.png"
+        ];
+
+        let imagensSelecionadas = imagensPokemon.slice(0, pares);
+        let imagensCartas = [...imagensSelecionadas, ...imagensSelecionadas];
+
+        imagensCartas = embaralharArray(imagensCartas);
+
+        pokedex.innerHTML = "";
+
+        imagensCartas.forEach((imagem) => {
+            const carta = document.createElement("div");
+            carta.classList.add("pokemon-card");
+            carta.setAttribute("data-pokemon", imagem);
+
+            const img = document.createElement("img");
+            img.src = `assets/img/${imagem}`;
+            img.alt = "Pokemon";
+            img.style.visibility = "hidden";
+
+            carta.appendChild(img);
+            pokedex.appendChild(carta);
+
+            carta.addEventListener("click", () => virarCarta(carta));
+        });
+    }
+
+    function virarCarta(carta) {
+        const img = carta.querySelector("img");
+
+        if (cartasViradas.length >= 2 || carta.classList.contains("virada")) return;
+
+        img.style.visibility = "visible";
+        carta.classList.add("virada");
+        cartasViradas.push(carta);
+
+        if (cartasViradas.length === 2) {
+            verificarPar();
+        }
+    }
+
+    function verificarPar() {
+        const [carta1, carta2] = cartasViradas;
+
+        const pokemon1 = carta1.getAttribute("data-pokemon");
+        const pokemon2 = carta2.getAttribute("data-pokemon");
+
+        if (pokemon1 === pokemon2) {
+            pontuacao += 10;
+            atualizarPontuacao();
+
+            carta1.removeEventListener("click", virarCarta);
+            carta2.removeEventListener("click", virarCarta);
+
+            cartasViradas = [];
+
+            verificarFimDeJogo();
+        } else {
+            setTimeout(() => {
+                carta1.querySelector("img").style.visibility = "hidden";
+                carta2.querySelector("img").style.visibility = "hidden";
+                carta1.classList.remove("virada");
+                carta2.classList.remove("virada");
+                cartasViradas = [];
+            }, 1000);
+        }
+    }
+
+    function atualizarPontuacao() {
+        const elementoPontuacao = document.getElementById("pontuacao");
+        elementoPontuacao.textContent = `Pontuação: ${pontuacao}`;
+    }
+
+    function verificarFimDeJogo() {
+        const todasCartas = document.querySelectorAll(".pokemon-card");
+        const todasViradas = Array.from(todasCartas).every((carta) =>
+            carta.classList.contains("virada")
+        );
+
+        if (todasViradas) {
+            clearInterval(intervalo);
+            finalizarJogo(true);
+        }
+    }
+
+    
+    function embaralharArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function reiniciarJogo() {
+        document.getElementById("fimDeJogo").style.display = "none";
+        document.getElementById("pokemonModal").style.display = "flex";
+        const pokedex = document.querySelector(".pokedex");
+        pokedex.innerHTML = "";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const botaoContinuar = document.getElementById("iniciarJogo");
+        const botaoJogarNovamente = document.getElementById("jogarNovamente");
+
+        botaoContinuar.addEventListener("click", configurarJogo);
+        botaoJogarNovamente.addEventListener("click", reiniciarJogo);
+
+        document.getElementById("pokemonModal").style.display = "flex";
+
+        carregarRanking();
+        atualizarRankingFixo();
+    });
+    
+</script>
+
+
+
+</html>
